@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/OmarCantu/dynamodb-crud-api-gateway/issues"
   },
-  "homepage": "https://github.com/OmarCantu/dynamodb-crud-api-gateway#readme"
+  "homepage": "https://github.com/OmarCantu/dynamodb-crud-api-gateway#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.37.0",
+    "@aws-sdk/util-dynamodb": "^3.37.0"
+  },
+  "devDependencies": {
+    "serverless-iam-roles-per-function": "^3.2.0"
+  }
 }
