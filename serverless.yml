@@ -1,6 +1,6 @@
 service: dynamodb-crud-api
 
-providerFn::GetAtt:
+provider:
   name: aws
   runtime: nodejs14.x
   stage: dev
@@ -78,7 +78,7 @@ functions:
     timeout: 5 # seconds
     events:
       - http:
-          path: post
+          path: posts
           method: GET
     iamRoleStatements:
       - Effect: "Allow"
@@ -92,7 +92,7 @@ resources:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: ${self:custom.postsTableName}
-        AttributeDefinition:
+        AttributeDefinitions:
           - AttributeName: postId
             AttributeType: S
         KeySchema:
@@ -101,4 +101,3 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-
